@@ -8,6 +8,9 @@ import { UsersComponent } from './users/users.component';
 import { TenantsComponent } from './tenants/tenants.component';
 import { RolesComponent } from 'app/roles/roles.component';
 import { ChangePasswordComponent } from './users/change-password/change-password.component';
+import { ProductsComponent } from './products/products.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { BlogsComponent } from './blogs/blogs.component';
 
 @NgModule({
     imports: [
@@ -18,6 +21,12 @@ import { ChangePasswordComponent } from './users/change-password/change-password
                 children: [
                     { path: 'home', component: HomeComponent,  canActivate: [AppRouteGuard] },
                     { path: 'users', component: UsersComponent, data: { permission: 'Pages.Users' }, canActivate: [AppRouteGuard] },
+
+                    { path: 'products', component: ProductsComponent, data: { permission: 'Pages.Products' }, canActivate: [AppRouteGuard] },
+                    { path: 'categories', component: CategoriesComponent, data: { permission: 'Pages.Categories' }, canActivate: [AppRouteGuard] },
+                    { path: 'blogs', component: BlogsComponent, data: { permission: 'Pages.Blogs' }, canActivate: [AppRouteGuard] },
+
+
                     { path: 'roles', component: RolesComponent, data: { permission: 'Pages.Roles' }, canActivate: [AppRouteGuard] },
                     { path: 'tenants', component: TenantsComponent, data: { permission: 'Pages.Tenants' }, canActivate: [AppRouteGuard] },
                     { path: 'about', component: AboutComponent, canActivate: [AppRouteGuard] },

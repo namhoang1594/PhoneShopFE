@@ -1,0 +1,72 @@
+<form class="form-horizontal" autocomplete="off" #editBlogForm="ngForm" (ngSubmit)="save()">
+  <abp-modal-header [title]="'EditBlog' | localize" (onCloseClick)="bsModalRef.hide()"></abp-modal-header>
+  <div class="modal-body">
+    <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="blogTitle">
+        {{ "Title" | localize }}
+      </label>
+      <div class="col-md-9">
+        <input type="text" class="form-control" name="blogTitle" id="blogTitle" minlength="2" required
+          [(ngModel)]="blog.title" #blogTitleModel="ngModel" #blogTitleEl />
+        <abp-validation-summary [control]="blogTitleModel" [controlEl]="blogTitleEl"></abp-validation-summary>
+      </div>
+    </div>
+
+    <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="blogType">
+        {{ "Type of Document" | localize }}
+      </label>
+      <div class="col-md-9">
+        <input type="text" class="form-control" name="blogType" id="blogType" minlength="2" required
+          [(ngModel)]="blog.typeofDocument" #blogTypeModel="ngModel" #blogTypeEl />
+        <abp-validation-summary [control]="blogTypeModel" [controlEl]="blogTypeEl"></abp-validation-summary>
+      </div>
+    </div>
+
+    <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="blogShort">
+        {{ "Short Contents" | localize }}
+      </label>
+      <div class="col-md-9">
+        <input type="text" class="form-control" name="blogShort" id="blogShort" minlength="2" required
+          [(ngModel)]="blog.shortContents" #blogShortModel="ngModel" #blogShortEl />
+        <abp-validation-summary [control]="blogShortModel" [controlEl]="blogShortEl"></abp-validation-summary>
+      </div>
+    </div>
+
+    <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="blogMain">
+        {{ "Main Contents" | localize }}
+      </label>
+      <div class="col-md-9">
+        <input type="text" class="form-control" name="blogMain" id="blogMain" minlength="2" required
+          [(ngModel)]="blog.mainContents" #blogMainModel="ngModel" #blogMainEl />
+        <abp-validation-summary [control]="blogMainModel" [controlEl]="blogMainEl"></abp-validation-summary>
+      </div>
+    </div>
+
+    <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="blogImage">
+        {{ "Images" | localize }}
+      </label>
+      <div class="col-md-9">
+        <input type="text" class="form-control" name="blogImage" id="blogImage" required [(ngModel)]="blog.images"
+          #blogImageModel="ngModel" #blogImageEl />
+        <abp-validation-summary [control]="blogImageModel" [controlEl]="blogImageEl"></abp-validation-summary>
+      </div>
+    </div>
+
+    <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="blogDes">
+        {{ "Description" | localize }}
+      </label>
+      <div class="col-md-9">
+        <input type="text" class="form-control" name="blogDes" id="blogDes" minlength="2" required
+          [(ngModel)]="blog.description" #blogDesModel="ngModel" #blogDesEl />
+        <abp-validation-summary [control]="blogDesModel" [controlEl]="blogDesEl"></abp-validation-summary>
+      </div>
+    </div>
+  </div>
+  <abp-modal-footer [cancelDisabled]="saving" [saveDisabled]="!editBlogForm.form.valid || saving"
+    (onCancelClick)="bsModalRef.hide()"></abp-modal-footer>
+</form>

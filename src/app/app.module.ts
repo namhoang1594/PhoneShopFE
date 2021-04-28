@@ -41,6 +41,12 @@ import { SidebarMenuComponent } from './layout/sidebar-menu.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { ProductsComponent } from './products/products.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { CreateProductDialogComponent } from './products/create-product-dialog/create-product-dialog.component';
+import { EditProductDialogComponent } from './products/edit-product-dialog/edit-product-dialog.component';
+import { CreateCategoryDialogComponent } from './categories/create-category-dialog/create-category-dialog.component';
+import { EditCategoryDialogComponent } from './categories/edit-category-dialog/edit-category-dialog.component';
+import { CreateBlogDialogComponent } from './blogs/create-blog-dialog/create-blog-dialog.component';
+import { EditBlogDialogComponent } from './blogs/edit-blog-dialog/edit-blog-dialog.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +79,13 @@ import { CategoriesComponent } from './categories/categories.component';
     SidebarMenuComponent,
     BlogsComponent,
     ProductsComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    CreateProductDialogComponent,
+    EditProductDialogComponent,
+    CreateCategoryDialogComponent,
+    EditCategoryDialogComponent,
+    CreateBlogDialogComponent,
+    EditBlogDialogComponent
   ],
   imports: [
     CommonModule,

@@ -4,11 +4,12 @@ import { PagedListingComponentBase, PagedRequestDto } from '@shared/paged-listin
 import { ProductDto, ProductDtoPagedResultDto, ProductServiceProxy } from '@shared/service-proxies/service-proxies';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { finalize } from 'rxjs/operators';
+import { CreateProductDialogComponent } from './create-product-dialog/create-product-dialog.component';
+import { EditProductDialogComponent } from './edit-product-dialog/edit-product-dialog.component';
 
 
 class PagedProductsRequestDto extends PagedRequestDto {
   keyword: string;
-  isActive: boolean | null;
 }
 @Component({
   selector: 'app-products',

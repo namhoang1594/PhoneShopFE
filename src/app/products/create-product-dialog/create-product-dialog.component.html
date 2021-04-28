@@ -1,0 +1,180 @@
+<form
+  class="form-horizontal"
+  autocomplete="off"
+  #createProductForm="ngForm"
+  (ngSubmit)="save()"
+>
+  <abp-modal-header
+    [title]="'CreateNewProduct' | localize"
+    (onCloseClick)="bsModalRef.hide()"
+  ></abp-modal-header>
+  <div class="modal-body">
+    <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="productName">
+        {{ "Product Name" | localize }}
+      </label>
+      <div class="col-md-9">
+        <input
+          type="text"
+          class="form-control"
+          name="productName"
+          id="productName"
+          minlength="2"
+          required
+          [(ngModel)]="product.name"
+          #productNameModel="ngModel"
+          #productNameEl
+        />
+        <abp-validation-summary
+          [control]="productNameModel"
+          [controlEl]="productNameEl"
+        ></abp-validation-summary>
+      </div>
+    </div>
+
+    <div class="form-group row required">
+        <label class="col-md-3 col-form-label" for="categoryName">
+          {{ "Category" | localize }}
+        </label>
+        <div class="col-md-9">
+          <input
+            type="text"
+            class="form-control"
+            name="categoryName"
+            id="categoryName"
+            minlength="2"
+            required
+            [(ngModel)]="product.categoryId"
+            #categoryNameModel="ngModel"
+            #categoryNameEl
+          />
+          <abp-validation-summary
+            [control]="categoryNameModel"
+            [controlEl]="categoryNameEl"
+          ></abp-validation-summary>
+        </div>
+    </div>
+
+    <div class="form-group row required">
+        <label class="col-md-3 col-form-label" for="productPrice">
+          {{ "Price" | localize }}
+        </label>
+        <div class="col-md-9">
+          <input
+            type="number"
+            class="form-control"
+            name="productPrice"
+            id="productPrice"
+            minlength="2"
+            maxlength="10"
+            required
+            [(ngModel)]="product.price"
+            #productPriceModel="ngModel"
+            #productPriceEl
+          />
+          <abp-validation-summary
+            [control]="productPriceModel"
+            [controlEl]="productPriceEl"
+          ></abp-validation-summary>
+        </div>
+    </div>
+
+    <div class="form-group row required">
+        <label class="col-md-3 col-form-label" for="productQuantity">
+          {{ "Quantity" | localize }}
+        </label>
+        <div class="col-md-9">
+          <input
+            type="number"
+            class="form-control"
+            name="productQuantity"
+            id="productQuantity"
+            minlength="1"
+            maxlength="10"
+            required
+            [(ngModel)]="product.quantity"
+            #productQuantityModel="ngModel"
+            #productQuantityEl
+          />
+          <abp-validation-summary
+            [control]="productQuantityModel"
+            [controlEl]="productQuantityEl"
+          ></abp-validation-summary>
+        </div>
+    </div>
+
+    <div class="form-group row required">
+        <label class="col-md-3 col-form-label" for="productImage">
+          {{ "Images" | localize }}
+        </label>
+        <div class="col-md-9">
+          <input
+            type="text"
+            class="form-control"
+            name="productImage"
+            id="productImage"
+            required
+            [(ngModel)]="product.images"
+            #productImageModel="ngModel"
+            #productImageEl
+          />
+          <abp-validation-summary
+            [control]="productImageModel"
+            [controlEl]="productImageEl"
+          ></abp-validation-summary>
+        </div>
+    </div>
+
+    <div class="form-group row required">
+        <label class="col-md-3 col-form-label" for="productDetails">
+          {{ "Details" | localize }}
+        </label>
+        <div class="col-md-9">
+          <input
+            type="text"
+            class="form-control"
+            name="productDetails"
+            id="productDetails"
+            minlength="2"
+            required
+            [(ngModel)]="product.details"
+            #productDetailsModel="ngModel"
+            #productDetailsEl
+          />
+          <abp-validation-summary
+            [control]="productDetailsModel"
+            [controlEl]="productDetailsEl"
+          ></abp-validation-summary>
+        </div>
+    </div>
+
+      <div class="form-group row required">
+        <label class="col-md-3 col-form-label" for="productDes">
+          {{ "Description" | localize }}
+        </label>
+        <div class="col-md-9">
+          <input
+            type="text"
+            class="form-control"
+            name="productDes"
+            id="productDes"
+            minlength="2"
+            required
+            [(ngModel)]="product.description"
+            #productDesModel="ngModel"
+            #productDesEl
+          />
+          <abp-validation-summary
+            [control]="productDesModel"
+            [controlEl]="productDesEl"
+          ></abp-validation-summary>
+        </div>
+      </div>
+    
+  </div>
+  <abp-modal-footer
+    [cancelDisabled]="saving"
+    [saveDisabled]="!createProductForm.form.valid || saving"
+    (onCancelClick)="bsModalRef.hide()"
+  ></abp-modal-footer>
+</form>
